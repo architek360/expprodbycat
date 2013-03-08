@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SLab_ExpProdByCat>
+            <version>0.1.0</version>
+        </SLab_ExpProdByCat>
+    </modules>
+    <admin>
+        <routers>
+            <expprodbycat>
+                <use>admin</use>
+                <args>
+                    <module>SLab_ExpProdByCat</module>
+                    <frontName>expprodbycat</frontName>
+                </args>
+            </expprodbycat>
+        </routers>
+    </admin>
+    <global>
+		<blocks>
+            <expprodbycat>
+                <class>SLab_ExpProdByCat_Block</class>
+            </expprodbycat>
+		</blocks>
+        <models>
+            <expprodbycat>
+                <class>SLab_ExpProdByCat_Model</class>
+            </expprodbycat>
+        </models>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <adminhtml_block_html_before>
+                        <type>singleton</type>
+                        <class>expprodbycat/observer</class>
+                        <method>runBlockObserver</method>
+                    </adminhtml_block_html_before>
+                </observers>
+            </adminhtml_block_html_before>
+        </events>
+
+
+        <rewrite>
+            <adminhtml_catalog_category_exportProductsCsv>
+                <from><![CDATA[#^/admin/catalog_category/(exportProductsCsv|exportProductsExcel)#]]></from>
+                <to>/expprodbycat/category/{$1}</to>
+            </adminhtml_catalog_category_exportProductsCsv>
+            <!--<adminhtml_catalog_category_exportProductsExcel>-->
+                <!--<from><![CDATA[#^/admin/catalog_category/(exportProductsExcel)#]]></from>-->
+                <!--<to>/expprodbycat/category/{$1}</to>-->
+            <!--</adminhtml_catalog_category_exportProductsExcel>-->
+        </rewrite>
+        <block_events>
+            <!--Example rewrite of block Mage_Adminhtml_Block_Sales_Order_Grid:-->
+            <Mage_Adminhtml_Block_Catalog_Category_Tab_Product>
+                <observers>
+                    <type>singleton</type>
+                    <block>expprodbycat/adminhtml_catalog_category_tab_product</block>
+                    <method>Mage_Adminhtml_Block_Catalog_Category_Tab_Product</method>
+                    <parent>true</parent>
+                </observers>
+            </Mage_Adminhtml_Block_Catalog_Category_Tab_Product>
+        </block_events>
+	</global>
+
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SLab_ExpProdByCat>
+            <active>true</active>
+            <codePool>local</codePool>
+        </SLab_ExpProdByCat>
+    </modules>
+</config>
