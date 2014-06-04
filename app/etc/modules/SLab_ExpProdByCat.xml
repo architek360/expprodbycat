@@ -4,6 +4,10 @@
         <SLab_ExpProdByCat>
             <active>true</active>
             <codePool>local</codePool>
+            <depends>
+                <!-- https://snow-commerce.git.beanstalkapp.com/block-observer.git -->
+                <!--<SnowCommerce_BlockObserver/>-->
+            </depends>
         </SLab_ExpProdByCat>
     </modules>
 </config>
