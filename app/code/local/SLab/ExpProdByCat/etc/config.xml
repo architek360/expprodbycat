@@ -27,17 +27,17 @@
                 <class>SLab_ExpProdByCat_Model</class>
             </expprodbycat>
         </models>
-        <events>
-            <adminhtml_block_html_before>
-                <observers>
-                    <adminhtml_block_html_before>
-                        <type>singleton</type>
-                        <class>expprodbycat/observer</class>
-                        <method>runBlockObserver</method>
-                    </adminhtml_block_html_before>
-                </observers>
-            </adminhtml_block_html_before>
-        </events>
+        <!--<events>-->
+            <!--<adminhtml_block_html_before>-->
+                <!--<observers>-->
+                    <!--<adminhtml_block_html_before>-->
+                        <!--<type>singleton</type>-->
+                        <!--<class>expprodbycat/observer</class>-->
+                        <!--<method>runBlockObserver</method>-->
+                    <!--</adminhtml_block_html_before>-->
+                <!--</observers>-->
+            <!--</adminhtml_block_html_before>-->
+        <!--</events>-->
 
 
         <rewrite>
@@ -53,12 +53,12 @@
         <block_events>
             <!--Example rewrite of block Mage_Adminhtml_Block_Sales_Order_Grid:-->
             <Mage_Adminhtml_Block_Catalog_Category_Tab_Product>
-                <observers>
+                <observers_epbc>
                     <type>singleton</type>
                     <block>expprodbycat/adminhtml_catalog_category_tab_product</block>
                     <method>Mage_Adminhtml_Block_Catalog_Category_Tab_Product</method>
                     <parent>true</parent>
-                </observers>
+                </observers_epbc>
             </Mage_Adminhtml_Block_Catalog_Category_Tab_Product>
         </block_events>
 	</global>
