@@ -42,7 +42,8 @@
 
         <rewrite>
             <adminhtml_catalog_category_exportProductsCsv>
-                <from><![CDATA[#^/admin/catalog_category/(exportProductsCsv|exportProductsExcel)#]]></from>
+                <!--<from><![CDATA[#^/admin/catalog_category/(exportProductsCsv|exportProductsExcel)#]]></from>-->
+                <from><![CDATA[#^/snowcomm_admin/catalog_category/(exportProductsCsv|exportProductsExcel)#]]></from>
                 <to>/expprodbycat/category/{$1}</to>
             </adminhtml_catalog_category_exportProductsCsv>
             <!--<adminhtml_catalog_category_exportProductsExcel>-->
